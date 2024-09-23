@@ -1,0 +1,35 @@
+﻿@model ASP.NET_Projekt_1_Reuther_Projekt.Models.JopPost           // wir sagen hier das das Model was machen soll
+
+<form>
+    <div class="card">
+        <div class="card-header">
+            <h5>Inserat</h5>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div> <input asp-for="JobName" class="form-control" type="text" placeholder="Job Name" /></div>
+               
+                <div><input asp-for="JobLocation" class="form-control" type="text" placeholder="Arbeitsort" /></div>
+                
+
+            </div>
+            
+            <textarea asp-for="JobDescription" class="form-control" placeholder="Bitte trage die Jobbezeichnung ein">
+                
+            </textarea>
+            <input asp-for="Salary" class="form-control" type="number" placeholder="Wieviel Jahresgehalt" />
+            <input asp-for="StartDate" class="form-control" type="date" placeholder="Beginn des Jobs" />
+            <input asp-for="CompanyName" class="form-control" type="text" placeholder="Name des Unternehmens" />
+            <input asp-for="ContactPhone" class="form-control" type="tel" placeholder="Telefonnummer" />
+            <input asp-for="ContactMail" class="form-control" type="email" placeholder="Email-Adresse" />
+            <input asp-for="ContactWebsite" class="form-control" type="url" placeholder="Website des Unternehmen" />
+
+        </div>
+        <div>
+           <button type="submit" class="btn btn-success"> Absenden</button>
+
+        </div>
+    </div>
+    
+   
+</form>
