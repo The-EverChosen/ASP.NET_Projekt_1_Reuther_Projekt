@@ -1,6 +1,7 @@
-﻿@model ASP.NET_Projekt_1_Reuther_Projekt.Models.JopPost           // wir sagen hier das das Model was machen soll
+﻿@model ASP.NET_Projekt_1_Reuther_Projekt.Models.JopPost           // wir sagen hier das das Model was machen soll, es reicht ewnn es im gleichen namespace, wenn man nur JopPost schreibt
 
-<form>
+<form asp-controller="JopPosting" asp-action="CreatedEditJop" enctype="multipart/form-data">
+
     <div class="card">
         <div class="card-header">
             <h5>Inserat</h5>
@@ -17,15 +18,20 @@
             <textarea asp-for="JobDescription" class="form-control" placeholder="Bitte trage die Jobbezeichnung ein">
                 
             </textarea>
-            <input asp-for="Salary" class="form-control" type="number" placeholder="Wieviel Jahresgehalt" />
-            <input asp-for="StartDate" class="form-control" type="date" placeholder="Beginn des Jobs" />
-            <input asp-for="CompanyName" class="form-control" type="text" placeholder="Name des Unternehmens" />
-            <input asp-for="ContactPhone" class="form-control" type="tel" placeholder="Telefonnummer" />
-            <input asp-for="ContactMail" class="form-control" type="email" placeholder="Email-Adresse" />
-            <input asp-for="ContactWebsite" class="form-control" type="url" placeholder="Website des Unternehmen" />
+            <input asp-for="Salary" class="form-control" type="number" required placeholder="Wieviel Jahresgehalt" />
+            <input asp-for="StartDate" class="form-control" type="date" required placeholder="Beginn des Jobs" />
+            <input asp-for="CompanyName" class="form-control" type="text"required placeholder="Name des Unternehmens" />
+            <input asp-for="ContactPhone" class="form-control" type="tel"required placeholder="Telefonnummer" />
+            <input asp-for="ContactMail" class="form-control" type="email"required placeholder="Email-Adresse" />
+            <input asp-for="ContactWebsite" class="form-control" type="url"required placeholder="Website des Unternehmen" />
 
         </div>
         <div>
+            <div class="row mb-3 p-1">
+                <label class="mb-3" for="CompanyImage"> Firmenlogo hochladen</label>
+                <input type="file" class="form-control" id="CompanyImage" name="file" />
+
+            </div>
            <button type="submit" class="btn btn-success"> Absenden</button>
 
         </div>

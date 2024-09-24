@@ -3,6 +3,29 @@
 *@
 @{
 }
-
+@model List<JopPost>
 <h1> Hier sind deine Inserate</h1>
 <a class="btn btn-primary" asp-controller="JopPosting" asp-action="FormJopPosting">Neues Inserat -erstellen- </a>
+<table> 
+    
+    <thead>
+        <td>Jobbezeichnung</td>
+        <td>Ort</td>
+        <td>StartDatum</td>
+        <td>Gehalt</td>
+    </thead>
+    @foreach(JopPost jopPost in Model)
+    {
+        <tr>
+            <td>@jopPost.JobDescription</td>
+            <td>@jopPost.JobLocation</td>
+            <td>@jopPost.StartDate</td>
+            <td>@jopPost.Salary</td>
+        </tr>
+    }
+    <tr>
+        
+    </tr>
+    
+
+</table>
